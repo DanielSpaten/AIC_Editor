@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=3 uid="uid://kblj77lj63hv"]
+
+[ext_resource type="LabelSettings" uid="uid://uyfxmvqkcb70" path="res://GUI/label_settings.tres" id="1_1w41s"]
+[ext_resource type="Script" path="res://AICEditor/aic_editor.gd" id="1_qrqgd"]
+[ext_resource type="Texture2D" uid="uid://d3ymxc65g8xph" path="res://assets/images/background.png" id="2_mpywe"]
+[ext_resource type="FontFile" uid="uid://b6g4651dnpd71" path="res://assets/font/AnonymousPro-Regular.ttf" id="3_1khxu"]
+[ext_resource type="PackedScene" uid="uid://bpkm0i44g6osv" path="res://GUI/my_button.tscn" id="3_hxnce"]
+
+[node name="AICEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qrqgd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mpywe")
+expand_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Stronghold AIC Editor
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+label_settings = ExtResource("1_1w41s")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(1000, 600)
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="CenterContainer/ScrollContainer"]
+custom_minimum_size = Vector2(1000, 600)
+layout_mode = 2
+tab_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -90.0
+offset_right = -75.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ExitButton" parent="HBoxContainer" instance=ExtResource("3_hxnce")]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+text = "Exit"
+
+[node name="SaveLabel" type="Label" parent="HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(495, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1khxu")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="SaveButton" parent="HBoxContainer" instance=ExtResource("3_hxnce")]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+text = "Save"
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="tab_changed" from="CenterContainer/ScrollContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
+[connection signal="pressed" from="HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]

@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://omjkhk6n6cvd"]
+
+[ext_resource type="Script" path="res://GUI/main_screen.gd" id="1_3l8hv"]
+[ext_resource type="LabelSettings" uid="uid://uyfxmvqkcb70" path="res://GUI/label_settings.tres" id="1_pksj8"]
+[ext_resource type="Texture2D" uid="uid://d3ymxc65g8xph" path="res://assets/images/background.png" id="2_fo588"]
+[ext_resource type="PackedScene" uid="uid://bpkm0i44g6osv" path="res://GUI/my_button.tscn" id="2_l8j23"]
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3l8hv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fo588")
+expand_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Stronghold AIC Editor
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+label_settings = ExtResource("1_pksj8")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Create_AIC" parent="CenterContainer/VBoxContainer" instance=ExtResource("2_l8j23")]
+visible = false
+layout_mode = 2
+text = "Create new AIC"
+
+[node name="Load_AIC" parent="CenterContainer/VBoxContainer" instance=ExtResource("2_l8j23")]
+layout_mode = 2
+text = "Load AIC-file"
+icon_alignment = 1
+
+[node name="Exit" parent="CenterContainer/VBoxContainer" instance=ExtResource("2_l8j23")]
+layout_mode = 2
+text = "Exit
+"
+
+[node name="FileSelection" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 2
+size = Vector2i(500, 500)
+popup_window = true
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+
+[node name="FileDialog" type="FileDialog" parent="."]
+initial_position = 2
+size = Vector2i(500, 500)
+ok_button_text = "Save"
+access = 2
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Create_AIC" to="." method="_on_create_aic_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Load_AIC" to="." method="_on_load_aic_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="file_selected" from="FileSelection" to="." method="_on_file_selection_file_selected"]
+[connection signal="confirmed" from="FileDialog" to="." method="_on_file_dialog_confirmed"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6xs1jwofoj41"]
+
+[ext_resource type="Script" path="res://AICEditor/character_container.gd" id="1_l0cud"]
+[ext_resource type="PackedScene" uid="uid://bvvr2mc15fjcl" path="res://AICEditor/grid_container.tscn" id="2_4yqg4"]
+
+[node name="Character" type="ScrollContainer"]
+custom_minimum_size = Vector2(1000, 550)
+script = ExtResource("1_l0cud")
+
+[node name="GridContainer" parent="." instance=ExtResource("2_4yqg4")]
+layout_mode = 2

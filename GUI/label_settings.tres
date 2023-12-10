@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://uyfxmvqkcb70"]
+
+[ext_resource type="FontFile" uid="uid://pjvjyvf1eyao" path="res://assets/font/OldLondon.ttf" id="1_mxhsq"]
+
+[resource]
+font = ExtResource("1_mxhsq")
+font_size = 64
+font_color = Color(0.866667, 0, 0.168627, 1)

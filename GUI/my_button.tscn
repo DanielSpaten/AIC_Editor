@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpkm0i44g6osv"]
+
+[ext_resource type="FontFile" uid="uid://pjvjyvf1eyao" path="res://assets/font/OldLondon.ttf" id="1_3f3kt"]
+[ext_resource type="Theme" uid="uid://d4bucu883k4y" path="res://GUI/my_button_theme.tres" id="1_ka4ge"]
+
+[node name="Button" type="Button"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 100)
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_ka4ge")
+theme_override_fonts/font = ExtResource("1_3f3kt")
+theme_override_font_sizes/font_size = 32

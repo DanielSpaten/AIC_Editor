@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://d4bucu883k4y"]
+
+[ext_resource type="FontFile" uid="uid://pjvjyvf1eyao" path="res://assets/font/OldLondon.ttf" id="1_qckab"]
+[ext_resource type="Texture2D" uid="uid://dqpw6rl2td365" path="res://assets/images/button.png" id="2_a0wm3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aa1uo"]
+texture = ExtResource("2_a0wm3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vb0lh"]
+texture = ExtResource("2_a0wm3")
+modulate_color = Color(0.741176, 0.741176, 0.741176, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7su8g"]
+texture = ExtResource("2_a0wm3")
+modulate_color = Color(0.345098, 0.345098, 0.345098, 1)
+
+[resource]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_qckab")
+Button/styles/hover = SubResource("StyleBoxTexture_aa1uo")
+Button/styles/normal = SubResource("StyleBoxTexture_vb0lh")
+Button/styles/pressed = SubResource("StyleBoxTexture_7su8g")
