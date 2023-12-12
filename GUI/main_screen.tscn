@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://omjkhk6n6cvd"]
+[gd_scene load_steps=6 format=3 uid="uid://omjkhk6n6cvd"]
 
 [ext_resource type="Script" path="res://GUI/main_screen.gd" id="1_3l8hv"]
 [ext_resource type="LabelSettings" uid="uid://uyfxmvqkcb70" path="res://GUI/label_settings.tres" id="1_pksj8"]
 [ext_resource type="Texture2D" uid="uid://d3ymxc65g8xph" path="res://assets/images/background.png" id="2_fo588"]
 [ext_resource type="PackedScene" uid="uid://bpkm0i44g6osv" path="res://GUI/my_button.tscn" id="2_l8j23"]
+[ext_resource type="FontFile" uid="uid://b6g4651dnpd71" path="res://assets/font/AnonymousPro-Regular.ttf" id="4_ebc16"]
 
 [node name="MainScreen" type="Control"]
 layout_mode = 3
@@ -57,6 +58,17 @@ horizontal_alignment = 1
 layout_mode = 2
 alignment = 1
 
+[node name="LastFileLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ebc16")
+theme_override_font_sizes/font_size = 16
+text = "Last file:"
+autowrap_mode = 3
+
+[node name="LoadLastAIC" parent="CenterContainer/VBoxContainer" instance=ExtResource("2_l8j23")]
+layout_mode = 2
+text = "Load last AIC-file"
+
 [node name="Create_AIC" parent="CenterContainer/VBoxContainer" instance=ExtResource("2_l8j23")]
 visible = false
 layout_mode = 2
@@ -92,6 +104,7 @@ size = Vector2i(500, 500)
 ok_button_text = "Save"
 access = 2
 
+[connection signal="pressed" from="CenterContainer/VBoxContainer/LoadLastAIC" to="." method="_on_load_last_aic_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Create_AIC" to="." method="_on_create_aic_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Load_AIC" to="." method="_on_load_aic_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Instructions" to="." method="_on_instructions_pressed"]
