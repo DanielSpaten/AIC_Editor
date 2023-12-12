@@ -63,7 +63,7 @@ custom_minimum_size = Vector2(300, 20)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ebc16")
 theme_override_font_sizes/font_size = 16
-text = "Last file: "
+text = "Last file:"
 autowrap_mode = 3
 
 [node name="LoadLastAIC" parent="CenterContainer/VBoxContainer" instance=ExtResource("2_l8j23")]

@@ -1,14 +1,33 @@
 extends Node
 
-var itemData = {}
-
-var data_file_path
 var type_dict: Dictionary
-var save_path
+var save_path = ""
+var _save: SaveData
+
+func _enter_tree():
+	_create_or_load_save()
 
 func _ready():
 	type_dict = load_json_file("res://ressources/type_dictionary.json")
 
+func _create_or_load_save():
+	if SaveData.save_exists():
+		_save = SaveData.load_save() as SaveData
+	else:
+		_save = SaveData.new()
+		
+		_save.path = last_path.new()
+		_save.path.path = ""
+		
+		_save.write_save()
+	
+	save_path = _save.path.path
+
+func write_save(path):
+	_save.path.path = path
+	save_path = path
+	_save.write_save()
+	
 var resource = [
 	"None",
 	"Wood",

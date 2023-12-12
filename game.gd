@@ -15,5 +15,5 @@ func load_main_screen():
 	screen = screen.instantiate()
 	screen.file_selected.connect(load_aic_editor)
 	add_child(screen)
-	
+
 

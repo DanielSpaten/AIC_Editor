@@ -13,14 +13,14 @@ extends Control
 signal file_selected
 
 func _ready() -> void:
-	var file = FileAccess.open("res://ressources/last_aic.txt", FileAccess.READ)
-	var content = file.get_as_text()
-	if content == "":
+	var data = StaticData.save_path
+	print("PATH: ", data)
+	if data == "":
 		last_file_label.hide()
 		load_last_aic.hide()
 	else:
-		last_file_label.text += content
-		StaticData.save_path = content.replace("\n", "")
+		last_file_label.text += data
+		StaticData.save_path = data
 
 func _on_load_aic_pressed() -> void:
 	if !file_selection.visible:
@@ -48,8 +48,9 @@ func _on_file_selection_file_selected(path) -> void:
 		StaticData.create_warning("Selected file is not a '.json'-file")
 		return
 	var data = StaticData.load_json_file(path)
-	StaticData.save_path = path
+	StaticData.write_save(path)
 	var file = FileAccess.open("res://ressources/last_aic.txt", FileAccess.WRITE)
+	print("Path: ", path)
 	file.store_line(path)
 	emit_signal("file_selected", data)
 	queue_free()
