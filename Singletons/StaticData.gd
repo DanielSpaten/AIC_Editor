@@ -189,3 +189,19 @@ func create_warning(dialog_text):
 	warning.title = "Warning"
 	warning.show()
 	get_tree().current_scene.add_child(warning)
+
+var cont1 = ["CriticalPopularity", "LowestPopularity", "HighestPopularity", "TaxesMin", "TaxesMax",
+			"Farm1", "Farm2", "Farm3" ,"Farm4", "Farm5", "Farm6","Farm7", "Farm8", "PopulationPerFarm",
+			"PopulationPerWoodcutter", "PopulationPerQuarry", "PopulationPerIronmine", "PopulationPerPitchrig",
+			"MaxQuarries", "MaxIronmines", "MaxWoodcutters", "MaxPitchrigs", "MaxFarms", "BuildInterval",
+			"ResourceRebuildDelay", "MaxFood", "MinimumApples", "MinimumCheese", "MinimumBread", "MinimumWheat",
+			"MinimumHop", "TradeAmountFood", "TradeAmountEquipment", "AIRequestDelay", "MinimumGoodsRequiredAfterTrade",
+			"DoubleRationsFoodThreshold", "MaxWood", "MaxStone", "MaxResourceOther", "MaxEquipment", "MaxBeer",
+			"MaxResourceVariance", "RecruitGoldThreshold", "BlacksmithSetting", "FletcherSetting", "PoleturnerSetting",
+			"SellResource01", "SellResource02", "SellResource03", "SellResource04", "SellResource05", "SellResource06",
+			"SellResource07", "SellResource08", "SellResource09", "SellResource10", "SellResource11", "SellResource12",
+			"SellResource13", "SellResource14", "SellResource15"
+	]
+var cont3 = ["WallDecoration", "Unknown001", "Unknown002", "Unknown003", "Unknown004", "Unknown005", "Unknown011",
+			"Unknown072", "Unknown073", "Unknown129", "Unknown132", "Unknown142"
+]

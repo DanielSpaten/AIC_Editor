@@ -3,9 +3,24 @@
 [ext_resource type="Script" path="res://AICEditor/character_container.gd" id="1_l0cud"]
 [ext_resource type="PackedScene" uid="uid://bvvr2mc15fjcl" path="res://AICEditor/grid_container.tscn" id="2_4yqg4"]
 
-[node name="Character" type="ScrollContainer"]
+[node name="Character" type="TabContainer"]
 custom_minimum_size = Vector2(1000, 550)
 script = ExtResource("1_l0cud")
 
-[node name="GridContainer" parent="." instance=ExtResource("2_4yqg4")]
+[node name="Economy|Cast Managment" type="ScrollContainer" parent="."]
+layout_mode = 2
+
+[node name="GridContainer1" parent="Economy|Cast Managment" instance=ExtResource("2_4yqg4")]
+layout_mode = 2
+
+[node name="Military" type="ScrollContainer" parent="."]
+layout_mode = 2
+
+[node name="GridContainer2" parent="Military" instance=ExtResource("2_4yqg4")]
+layout_mode = 2
+
+[node name="Other" type="ScrollContainer" parent="."]
+layout_mode = 2
+
+[node name="GridContainer3" parent="Other" instance=ExtResource("2_4yqg4")]
 layout_mode = 2

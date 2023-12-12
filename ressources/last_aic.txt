@@ -1,1 +1,1 @@
-E:/Godot/StrongholdCrusaderAIC/ressources/vanilla - Kopie.json
+C:/Users/Daniel/Desktop/Ordner/Stronghold Zeug/Stronghold Patch/UnofficialCrusaderPatch_2.15/resources/aic/season2.json
